@@ -20,6 +20,9 @@ import csv  # handle CSV data
 import json  # work with JSON data
 from datetime import datetime  # work with timestamps
 
+# Ensure project root is on Python path
+sys.path.append(str(pathlib.Path(__file__).resolve().parent.parent))
+
 # Import external packages
 from dotenv import load_dotenv
 
