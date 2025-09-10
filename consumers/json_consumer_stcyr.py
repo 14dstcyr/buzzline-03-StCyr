@@ -31,7 +31,7 @@ sys.path.append(str(pathlib.Path(__file__).resolve().parent.parent))
 from dotenv import load_dotenv
 
 # Import functions from local modules
-from utils.utils_producer import create_kafka_consumer
+from utils.utils_consumer import create_kafka_consumer
 from utils.utils_logger import logger
 
 #####################################
