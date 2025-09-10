@@ -23,6 +23,9 @@ import pathlib  # work with file paths
 import json  # work with JSON data
 from typing import Generator, Dict, Any
 
+# Ensure project root is on Python path
+sys.path.append(str(pathlib.Path(__file__).resolve().parent.parent))
+
 # Import external packages
 from dotenv import load_dotenv
 
