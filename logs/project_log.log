@@ -237,3 +237,12 @@
 2025-09-10 15:54:28 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:54:28.563405', 'temperature': 116.8}
 2025-09-10 15:54:33 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:54:33.564752', 'temperature': 117.2}
 2025-09-10 15:54:36 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:54:36.146980', 'temperature': 117.6}
+2025-09-10 15:54:41 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:54:41.148754', 'temperature': 118.0}
+2025-09-10 15:54:46 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:54:46.151042', 'temperature': 118.4}
+2025-09-10 15:54:51 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:54:51.153129', 'temperature': 118.8}
+2025-09-10 15:54:56 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:54:56.157631', 'temperature': 119.2}
+2025-09-10 15:55:01 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:55:01.161175', 'temperature': 119.6}
+2025-09-10 15:55:06 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:55:06.164618', 'temperature': 120.0}
+2025-09-10 15:55:08 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:55:08.998016', 'temperature': 120.4}
+2025-09-10 15:55:14 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:55:14.002735', 'temperature': 120.8}
+2025-09-10 15:55:19 | INFO | Sent message to topic 'smoker_csv': {'timestamp': '2025-09-10T20:55:19.008844', 'temperature': 121.2}
