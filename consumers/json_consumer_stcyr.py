@@ -20,13 +20,18 @@ Example JSON message (after deserialization) to be analyzed
 # Import packages from Python Standard Library
 import os
 import json  # handle JSON parsing
+import sys
+import pathlib
 from collections import defaultdict  # data structure for counting author occurrences
+
+# Ensure project root is on Python path
+sys.path.append(str(pathlib.Path(__file__).resolve().parent.parent))
 
 # Import external packages
 from dotenv import load_dotenv
 
 # Import functions from local modules
-from utils.utils_consumer import create_kafka_consumer
+from utils.utils_producer import create_kafka_consumer
 from utils.utils_logger import logger
 
 #####################################
