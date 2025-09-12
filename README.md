@@ -109,7 +109,7 @@ python3 -m pip install --upgrade -r requirements.txt
 
 ## Task 3. Start a Kafka JSON Producer
 
-This producer generates streaming JSON data for our topic.
+This producer generates earthquake JSON messages (tremors and aftershocks).
 
 In VS Code, open a terminal.
 Use the commands below to activate .venv (if not active), and start the producer.
@@ -133,23 +133,24 @@ Hint: See the producer code and [.env](.env).
 
 ## Task 4. Start a Kafka JSON Consumer
 
-This consumer processes streaming JSON data.
+This consumer processes earthquake JSON messages and raises alerts on aftershocks/magnitude events.
 
 In VS Code, open a NEW terminal in your root project folder.
 Use the commands below to activate .venv, and start the consumer.
 
-Windows:
+**Windows:**
 
 ```shell
 .venv\Scripts\activate
-py -m consumers.json_consumer_case
+py consumers/json_consumer_stcyr.py
 ```
+
 
 Mac/Linux:
 
 ```zsh
 source .venv/bin/activate
-python3 -m consumers.json_consumer_case
+python3 consumers/json_consumer_stcyr.py
 ```
 
 What did we name the topic used with JSON data?
