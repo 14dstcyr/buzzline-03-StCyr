@@ -205,22 +205,19 @@ py -m consumers.csv_consumer_case
 
 To kill the terminal, hit CTRL c (hold both CTRL key and c key down at the same time).
 
-## About the Smart Smoker (CSV Example)
+## About the Earthquake Simulation (CSV Example)
 
-A food stall occurs when the internal temperature of food plateaus or
-stops rising during slow cooking, typically between 150°F and 170°F.
-This happens due to evaporative cooling as moisture escapes from the
-surface of the food. The plateau can last for hours, requiring
-adjustments like wrapping the food or raising the cooking temperature to
-overcome it. Cooking should continue until the food reaches the
-appropriate internal temperature for safe and proper doneness.
+The CSV producer simulates seismic readings. Each record has a timestamp and magnitude value.
 
-The producer simulates a smart food thermometer, sending a temperature
-reading every 15 seconds. The consumer monitors these messages and
-maintains a time window of the last 5 readings.
-If the temperature varies by less than 2 degrees, the consumer alerts
-the BBQ master that a stall has been detected. This time window helps
-capture recent trends while filtering out minor fluctuations.
+- Tremors are small magnitudes (2.0–4.0).
+- Major quakes occur when magnitude ≥ 5.0.
+- Aftershocks appear as sudden spikes following a quake.
+
+The consumer:
+- Maintains a rolling average of the last 5 readings.
+- Raises **ALERT** if magnitude ≥ 5.0.
+- Raises **ALERT** if sudden change Δ ≥ 1.0 (aftershock detection).
+
 
 ## Later Work Sessions
 
