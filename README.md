@@ -116,16 +116,16 @@ Use the commands below to activate .venv (if not active), and start the producer
 
 Windows:
 
-```shell
+```
 .venv\Scripts\activate
-py -m producers.json_producer_case
+py producers/json_producer_stcyr.py
 ```
 
 Mac/Linux:
 
 ```zsh
 source .venv/bin/activate
-python3 -m producers.json_producer_case
+python3 producers/json_producer_stcyr.py
 ```
 
 What did we name the topic used with JSON data?
