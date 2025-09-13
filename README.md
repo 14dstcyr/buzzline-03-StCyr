@@ -80,7 +80,7 @@ Open your project in VS Code and use the commands for your operating system to:
 3. Upgrade pip
 4. Install from requirements.txt
 
-### Windows
+#### Windows
 
 Open a new PowerShell terminal in VS Code (Terminal / New Terminal / PowerShell).
 
@@ -94,7 +94,7 @@ py -m pip install --upgrade -r requirements.txt
 If you get execution policy error, run this first:
 `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
-### Mac / Linux
+#### Mac / Linux
 
 Open a new terminal in VS Code (Terminal / New Terminal)
 
@@ -111,93 +111,132 @@ python3 -m pip install --upgrade -r requirements.txt
 
 This producer generates earthquake JSON messages (tremors and aftershocks).
 
-In VS Code, open a terminal.
-Use the commands below to activate .venv (if not active), and start the producer.
+Before starting the JSON Producer:
 
-Windows:
+1. Open a new terminal in your project root.
+2. Activate your .venv.
+3. Run the command for your operating system (see below).
+
+What did we name the topic used with JSON data?
+Hint: See the producer code and .env (json_stcyr).
+
+#### Windows:
 
 ```
 .venv\Scripts\activate
 py producers/json_producer_stcyr.py
 ```
 
-Mac/Linux:
+#### Mac/Linux:
 
 ```zsh
 source .venv/bin/activate
 python3 producers/json_producer_stcyr.py
 ```
 
-What did we name the topic used with JSON data?
-Hint: See the producer code and [.env](.env).
-
 ## Task 4. Start a Kafka JSON Consumer
 
 This consumer processes earthquake JSON messages and raises alerts on aftershocks/magnitude events.
 
-In VS Code, open a NEW terminal in your root project folder.
-Use the commands below to activate .venv, and start the consumer.
+Before starting the JSON Consumer:
 
-**Windows:**
+1. Open a new terminal.
+2. Activate your .venv.
+3. Run the command for your operating system (see below).
+
+What did we name the topic used with JSON data?
+
+Hint: See the consumer code and .env  (json_stcyr).
+
+#### Windows:
 
 ```shell
 .venv\Scripts\activate
 py consumers/json_consumer_stcyr.py
 ```
 
-
-Mac/Linux:
+#### Mac/Linux:
 
 ```zsh
 source .venv/bin/activate
 python3 consumers/json_consumer_stcyr.py
 ```
 
-What did we name the topic used with JSON data?
-Hint: See the consumer code and [.env](.env).
-
----
-
 ## Task 5. Start a Kafka CSV Producer
 
-Follow a similar process to start the csv producer.
-You will need to:
+This producer generates seismic magnitude readings and sends them to Kafka.
+It can run in two modes:
 
-1. Open a new terminal (yes another)!
-2. Activate your .venv.
-3. Know the command that works on your machine to execute python (e.g. py or python3).
-4. Know how to use the -m (module flag to run your file as a module).
-5. Know the full name of the module you want to run. Hint: Look in the producers folder.
+### Option 1 — Synthetic Mode (default):
+*No CSV file is required.
+*Automatically generates magnitude readings with tremors and spikes.
 
 What did we name the topic used with csv data?
-Hint: See the producer code and [.env](.env).
 
-Hint: Windows:
+Hint: See the producer code and .env.
+
+#### Windows:
 
 ```shell
 .venv\Scripts\activate
-py -m producers.csv_producer_case
+py producers/csv_producer_stcyr.py
 ```
+
+#### Mac/Linux (or WSL):
+
+```zsh
+source .venv/bin/activate
+python3 producers/csv_producer_stcyr.py
+```
+
+### Option 2 — File Mode:
+
+*Reads data from data/seismic.csv (timestamp + magnitude).
+*Sends each row to Kafka as JSON.
+
+#### Windows:
+
+```shell
+.venv\Scripts\activate
+set CSV_SOURCE_FILE=data\seismic.csv
+py producers/csv_producer_stcyr.py
+```
+
+#### Mac/Linux (or WSL):
+
+```zsh
+source .venv/bin/activate
+CSV_SOURCE_FILE=data/seismic.csv python3 producers/csv_producer_stcyr.py
+```
+
+What did we name the topic used with CSV data?
+Hint: See the producer code and .env (csv_stcyr).
 
 ## Task 6. Start a Kafka CSV Consumer
 
-Follow a similar process to start the csv consumer.
-You will need to:
+This consumer monitors seismic magnitudes, calculates rolling averages, and raises alerts on aftershocks or quakes ≥ 5.0.
 
-1. Open a new terminal (yes another)!
+Before starting the CSV Consumer:
+
+1. Open a new terminal (yes, another one).
 2. Activate your .venv.
-3. Know the command that works on your machine to execute python (e.g. py or python3).
-4. Know how to use the -m (module flag to run your file as a module).
-5. Know the full name of the module you want to run. Hint: Look in the consumers folder.
+3. Run the command for your operating system (see below).
 
-What did we name the topic used with csv data?
-Hint: See the consumer code and [.env](.env).
+What did we name the topic used with CSV data?
+Hint: See the consumer code and .env (csv_stcyr).
 
-Hint: Windows:
+#### Windows:
 
 ```shell
 .venv\Scripts\activate
-py -m consumers.csv_consumer_case
+py consumers/csv_consumer_stcyr.py
+```
+
+#### Mac/Linux (or WSL):
+
+```zsh
+source .venv/bin/activate
+python3 consumers/csv_consumer_stcyr.py
 ```
 
 ---
