@@ -164,8 +164,8 @@ python3 consumers/json_consumer_stcyr.py
 
 ## Task 5. Start a Kafka CSV Producer
 
-This producer generates seismic magnitude readings and sends them to Kafka.
-It can run in two modes:
+This producer generates <u>seismic magnitude readings</u> and sends them to Kafka.
+It can run in <u>two modes</u>:
 
 ### Option 1 — Synthetic Mode (default):
 *No CSV file is required.
@@ -189,10 +189,33 @@ source .venv/bin/activate
 python3 producers/csv_producer_stcyr.py
 ```
 
-### Option 2 — File Mode:
+### Option 2 — File Mode (data/seismic.csv):
 
-*Reads data from data/seismic.csv (timestamp + magnitude).
-*Sends each row to Kafka as JSON.
+Replays seismic data from the included file: data/seismic.csv
+
+Each row has two fields: timestamp and magnitude.
+
+<u>Sends each row to Kafka as JSON</u>.
+
+The file simulates:
+
+*Small tremors (2.0–3.0)
+
+*A major quake (5.0–6.0)
+
+*Aftershocks (3.5–4.5)
+
+*Return to calm (2.0–2.8)
+
+<u>Example rows from data/seismic.csv</u>:
+
+```
+timestamp,magnitude
+2025-01-01 00:00:00,2.5
+2025-01-01 00:10:00,5.6   <-- major quake
+2025-01-01 00:11:00,5.3   <-- aftershock
+2025-01-01 00:18:00,2.4   <-- calm
+```
 
 #### Windows:
 
