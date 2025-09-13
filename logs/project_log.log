@@ -1,3 +1,0 @@
-2025-09-10 16:36:53 | WARNING | Consumer interrupted by user.
-2025-09-10 16:36:53 | INFO | Kafka consumer for topic 'buzzline_json' closed.
-2025-09-10 16:36:53 | INFO | END consumer for topic 'buzzline_json' and group 'buzz_group'.
